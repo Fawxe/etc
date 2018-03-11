@@ -1,0 +1,91 @@
+﻿@model technical_prototype.Models.EmailModel
+
+@{
+    ViewBag.Title = "Email";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="formContainer">
+
+        <div id="header">Email</div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.ToEmail, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "To" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.EMailBody, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Body", @style = "resize:vertical" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.EmailSubject, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Subject" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.EmailCC, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "CC" } })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.ToEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ToEmail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ToEmail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMailBody, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EMailBody, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMailBody, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailSubject, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailSubject, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailSubject, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmailCC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmailCC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmailCC, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+        <div class="buttonWrapper">
+            <div class="buttonRippleContainer">
+                <input type="submit" value="Send" class="buttonRipple" />
+            </div>
+        </div>
+
+    </div>
+
+        @*@<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Send" class="btn btn-default" />
+            </div>
+        </div>*@
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

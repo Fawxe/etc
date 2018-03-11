@@ -1,0 +1,174 @@
+﻿body {
+    
+    background-color: #EDEDED;
+
+}
+
+#wrapperContainer {
+
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+    
+}
+
+#contentContainer {
+
+    margin-top: 85px;
+
+}
+
+#header {
+
+    display: inline-block;
+    font-size: 28px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 60px;
+    margin-bottom: 50px;
+    background-color: #F5F5F5;
+    border-left: 4px solid #00C3FF;
+
+}
+
+.formContainer {
+
+    background-color: white;
+    padding: 30px;
+
+}
+
+.formGroup {
+
+    /*margin-left: 50px;*/
+    margin-bottom: 30px;
+
+}
+
+.textInputRippleContainer {
+
+    display: inline-block;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.textInputRipple {
+
+	font-size: 18px;
+    width: 700px;
+	padding: 0.2em;
+	border: 0;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	background: transparent;
+	color: black;
+	outline: none;
+
+}
+
+.textInputRipple::-webkit-input-placeholder {
+  	color: rgba(0, 0, 0, 0.2);
+}
+.textInputRipple::-moz-placeholder {
+  	color: rgba(0, 0, 0, 0.2);
+}
+.textInputRipple:-ms-input-placeholder {
+  	color: rgba(0, 0, 0, 0.2);
+}
+.textInputRipple:-moz-placeholder {
+  	color: rgba(0, 0, 0, 0.2);
+}
+
+.textInputRippleContainer .textInputRippleRect {
+
+	background-color: #00C3FF;
+	position: absolute;
+	width: 1px;
+	height: 2px;
+	bottom: 0;
+
+	animation: textInputRipple 0.3s linear;
+	animation-fill-mode: forwards;
+	-webkit-animation: textInputRipple 0.3s linear;
+	-webkit-animation-fill-mode: forwards;
+
+}
+
+@keyframes textInputRipple {
+	to {
+		width: 200%;
+		margin-left: -100%;
+	}
+}
+@-webkit-keyframes textInputRipple {
+	to {
+		width: 200%;
+		margin-left: -100%;
+	}
+}
+
+.buttonWrapper {
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.buttonRippleContainer {
+
+    display: inline-block;
+	position: relative;
+	overflow: hidden;
+    /*border-radius: 0.3em;*/
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.20);
+
+}
+
+.buttonRipple {
+
+	font-family: "Roboto";
+	font-size: 18px;
+	background-color: #00C3FF;
+	transition: background-color 0.3s;
+	color: white;
+	border: 0;
+	outline: none;
+	padding: 0.7em 1.5em;
+	overflow: hidden;
+	position: relative;
+
+}
+
+.buttonRipple:hover {
+
+	background-color: #40D2FF;
+
+}
+
+.buttonRippleContainer .buttonRippleCircle {
+
+	background-color: white;
+	border-radius: 50%;
+	opacity: 0.5;
+	position: absolute;
+
+	animation: buttonRipple 0.3s linear;
+	animation-fill-mode: forwards;
+	-webkit-animation: buttonRipple 0.3s linear;
+	-webkit-animation-fill-mode: forwards;
+
+}
+
+@keyframes buttonRipple {
+	to {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}
+@-webkit-keyframes buttonRipple {
+	to {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}

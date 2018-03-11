@@ -1,0 +1,85 @@
+﻿@model technical_prototype.Models.PrototypeModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="formContainer">
+        <div id="header">Create</div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Acct_Num, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Acct_Num" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Account_Type, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Account_Type" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Date" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Time" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Amount" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Store, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Store" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Location" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "State" } })
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Cardholder_Name, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Careholder_name" } })
+            </div>
+        </div>
+
+        <div class="buttonWrapper">
+            <div class="buttonRippleContainer">
+                <input type="submit" value="Create" class="buttonRipple" />
+            </div>
+        </div>
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

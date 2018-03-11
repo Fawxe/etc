@@ -1,0 +1,31 @@
+﻿@model technical_prototype.Models.AddRuleModel
+
+@{
+    ViewBag.Title = "Maximum Purchase Limit";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="formContainer">
+        <div id="header">Maximum Purchase Limit</div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="formGroup">
+            <div class="textInputRippleContainer">
+                @Html.EditorFor(model => model.Maximum_Purchase_Limit, new { htmlAttributes = new { @class = "textInputRipple", @placeholder = "Maximum Purchase Limit" } })
+            </div>
+        </div>
+        <div class="buttonWrapper">
+            <div class="buttonRippleContainer">
+                <input type="submit" value="Create" class="buttonRipple" />
+            </div>
+        </div>
+    </div>
+    
+
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
